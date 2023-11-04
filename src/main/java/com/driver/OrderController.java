@@ -20,11 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
 
+//    autiwired
     @Autowired
     OrderService orderService;
+
     @PostMapping("/add-order")
     public ResponseEntity<String> addOrder(@RequestBody Order order){
-
         return new ResponseEntity<>("New order added successfully", HttpStatus.CREATED);
     }
 
@@ -34,7 +35,7 @@ public class OrderController {
         return new ResponseEntity<>("New delivery partner added successfully", HttpStatus.CREATED);
     }
 
-    @PutMapping("/add-order-partner-pair")
+    @PutMapping("/add-order-partner-pair")  
     public ResponseEntity<String> addOrderPartnerPair(@RequestParam String orderId, @RequestParam String partnerId){
 
         //This is basically assigning that order to that partnerId
