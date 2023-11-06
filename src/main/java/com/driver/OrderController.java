@@ -65,6 +65,7 @@ public class OrderController {
     public ResponseEntity<Integer> getOrderCountByPartnerId(@PathVariable String partnerId){
 
         Integer orderCount = orderService.getOrderCountByPartnerId(partnerId);
+        orderCount = 0;
 
         //orderCount should denote the orders given by a partner-id
 
