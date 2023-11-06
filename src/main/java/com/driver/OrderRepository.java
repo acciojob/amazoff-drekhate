@@ -56,11 +56,11 @@ public class OrderRepository {
         return deliveryPartnerDb.get(partnerId);
     }
     public Integer getOrderCountByPartnerId(String partnerId) {
-        if(!partnerOrderDb.containsKey(partnerId)) {
-            return 0;
+        if(partnerOrderDb.containsKey(partnerId)) {
+            List<Order> list = partnerOrderDb.get(partnerId);
+            return list.size();
         }
-        List<Order> list = partnerOrderDb.get(partnerId);
-        return list.size();
+        return 0;
     }
     public List<String> getOrdersByPartnerId(String partnerId) {
         List<String> orders = new ArrayList<>();
